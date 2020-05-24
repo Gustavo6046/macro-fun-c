@@ -1,5 +1,6 @@
 #ifndef STRUCTOBJ_HEADER
 #define STRUCTOBJ_HEADER
+
 //---------------------- entering <structobj.h>
 
 /*
@@ -86,13 +87,14 @@ void* (*__impl_curr_fptr)();
 
 static inline void __intf_nul(const char *t, const char *fname, const char *i);
 
+//---------------------- exiting  <structobj.h>
+
 #endif // STRUCTOBJ_HEADER
 
-
+//---------------------- entering <structobj.h> impl mode
 // Internal implementations.
 static inline void __intf_nul(const char *t, const char *fname, const char *i) {
     fprintf(stderr,"Struct-Obj %s does not implement %s of interface %s, nor is there a default! Aborted.", t, fname, i);
     abort();
 }
-
-//---------------------- exiting <structobj.h>
+//---------------------- exiting  <structobj.h> impl mode
